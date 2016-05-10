@@ -3,10 +3,18 @@
 - 格式 : m3u8
 	- 測試檔案 : https://mega.nz/#F!ugxGEBaZ!z7OI0twEpBYdgGxUH7G5zw
 
-## apple 支援
-https://developer.apple.com/streaming/#streaming
+- github : <https://github.com/jhaoheng/HLS_sample>
 
-## 轉換工具 ffmpeg
+
+## apple 支援
+- https://developer.apple.com/streaming/#streaming
+
+- 使用 framework
+	- \<AVKit/AVKit.h> : ios9 only
+	- \<AVFoundation/AVFoundation.h>
+	- \<MediaPlayer/MediaPlayer.h> : ios8 以下
+
+## mp4 -> m3u8轉換工具 : ffmpeg
 
 因已安裝 homebrew 故
 ```
@@ -28,6 +36,7 @@ ffmpeg -i <filename>.mp4 -c:v libx264 -c:a copy -f hls <outputNmae>.m3u8
 - Web Server：提供 m3u8 播放清單。
 - Transcoder：若檔案內容並非 H.264 + AAC，那麼便需要進行轉檔。
 - Media Stream Segmenter：將欲播放的檔案切成 segment。
+
 
 ## 注意
 
